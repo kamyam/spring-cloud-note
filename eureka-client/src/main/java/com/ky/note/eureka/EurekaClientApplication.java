@@ -7,7 +7,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 
 /**
- * 使用@EnableEurekaClient或@EnableDiscoveryClient都可以，如果是第三方的注册中心建议是使用@EnableDiscoveryClient
+ * 使用@EnableEurekaClient或@EnableDiscoveryClient都可以，非Eureka建议是使用@EnableDiscoveryClient
  */
 @EnableDiscoveryClient
 @SpringBootApplication

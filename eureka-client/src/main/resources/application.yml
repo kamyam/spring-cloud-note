@@ -1,5 +1,5 @@
 server:
-  port: 52011
+  port: 5301
 
 spring:
   application:
@@ -10,4 +10,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
-      defaultZone: http://localhost:5201/eureka/
+      defaultZone: http://kamyam:5211/eureka/,http://sandy:5222/eureka/
