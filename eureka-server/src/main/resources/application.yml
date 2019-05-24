@@ -1,12 +1,9 @@
 server:
   port: 5201
 
-
-
 spring:
   application:
     name: eureka-Server
-
 
 eureka:
   instance:

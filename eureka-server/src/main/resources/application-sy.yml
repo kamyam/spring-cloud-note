@@ -1,16 +1,18 @@
 server:
-  port: 5222
+  port: 5203
 
 spring:
   application:
     name: eureka-server
 
 eureka:
+  server:
+    enable-self-preservation: false #保护模式
   instance:
-    hostname: sandy #指定了Eureka服务端的IP
+    hostname: 127.0.0.1 #指定了Eureka服务端的IP
   client:
-    register-with-eureka: true #是否将服务注册到Eureka服务端，单机：false，集群true
-    fetch-registry: true #是否从Eureka服务端获取服务信息，单机：false，集群true
+    register-with-eureka: true #是否将服务注册到Eureka服务端，单机:false，集群:true
+    fetch-registry: true #是否从Eureka服务端获取服务信息，单机:false，集群:true
     serviceUrl:
-      defaultZone: http://kamyam:5211/eureka/ #集群可以配置多个
+      defaultZone: http://127.0.0.1:5202/eureka/ #集群可以配置多个
       
