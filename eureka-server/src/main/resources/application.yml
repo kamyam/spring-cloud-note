@@ -9,8 +9,8 @@ eureka:
   instance:
     hostname: 127.0.0.1 #指定了Eureka服务端的IP
   client:
-    register-with-eureka: true #是否将服务注册到Eureka服务端，单机：false，集群true
-    fetch-registry: true #是否从Eureka服务端获取服务信息，单机：false，集群true
+    register-with-eureka: false #是否将服务注册到Eureka服务端，单机：false，集群true
+    fetch-registry: false #是否从Eureka服务端获取服务信息，单机：false，集群true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/ #Eureka服务端的地址
 

@@ -1,0 +1,25 @@
+server:
+  port: 5207
+
+spring:
+  application:
+    name: eureka-ribbon-client
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true #是否开启重试机制
+
+eureka-client:
+  ribbon:
+    OkToRetryOnAllOperations: true #对xxxx-service的所有请求在失败的时候都进行重试
+    MaxAutoRetries: 1 #对xxxx-service当前实例的重试次数
+    MaxAutoRetriesNextServer: 1 #切换xxxx-service实例的重试次数：
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:5201/eureka/
+
