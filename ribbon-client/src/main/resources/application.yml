@@ -3,11 +3,20 @@ server:
 
 spring:
   application:
-    name: eureka-ribbon-client
+    name: ribbon-client
   cloud:
     loadbalancer:
       retry:
         enabled: true #是否开启重试机制
+
+    consul:
+      host: 172.17.141.249
+      port: 8500
+      discovery:
+        service-name: ${spring.application.name}
+        hostname: 172.17.141.241
+
+
 
 eureka-client:
   ribbon:
@@ -16,10 +25,4 @@ eureka-client:
     MaxAutoRetriesNextServer: 1 #切换xxxx-service实例的重试次数：
 
 
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:5201/eureka/
 
