@@ -15,7 +15,7 @@ public class RibbonController {
     @RequestMapping("/test/ribbon")
     public ResponseEntity<String> testRibbon() {
 
-        String requestUrl = "http://consul-client/check";
+        String requestUrl = "http://zk-client/check";
 
         ResponseEntity<String> entity = restTemplate.getForEntity(requestUrl, String.class);
         return entity;

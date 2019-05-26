@@ -8,13 +8,15 @@ spring:
     loadbalancer:
       retry:
         enabled: true #是否开启重试机制
-
-    consul:
-      host: 172.17.141.249
-      port: 8500
-      discovery:
-        service-name: ${spring.application.name}
-        hostname: 172.17.141.241
+    cloud:
+      zookeeper:
+        connect-string: 127.0.0.1:2181
+#    consul:
+#     host: 172.17.141.249
+#     port: 8500
+#     discovery:
+#       service-name: ${spring.application.name}
+#       hostname: 172.17.141.241
 
 
 

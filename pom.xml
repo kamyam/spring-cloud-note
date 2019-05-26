@@ -18,6 +18,7 @@
         <module>eureka-client</module>
         <module>ribbon-client</module>
         <module>consul-client</module>
+        <module>zk-client</module>
     </modules>
 
 
