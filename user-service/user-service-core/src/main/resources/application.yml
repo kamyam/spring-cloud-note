@@ -1,5 +1,5 @@
 server:
-  port: 5301
+  port: 5302
 
 spring:
   application:
@@ -11,3 +11,5 @@ eureka:
     fetch-registry: true
     serviceUrl:
       defaultZone: http://127.0.0.1:5201/eureka/
+
+

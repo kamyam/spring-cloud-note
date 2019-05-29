@@ -2,21 +2,31 @@ package com.ky.note.eureka;
 
 
 import feign.Logger;
+import feign.Request;
+import feign.Retryer;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.SpringCloudApplication;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 
 /**
+ *
+ * 0. @SpringCloudApplication:= @EnableCircuitBreaker + @EnableDiscoveryClient + @SpringBootApplication
  * 1. @EnableDiscoveryClient：使用@EnableEurekaClient或@EnableDiscoveryClient都可以;当注册中心非Eureka时必需使用@EnableDiscoveryClient;
  * 2. @EnableFeignClients: 启用Feign自动配置
+ * 3. @EnableCircuitBreaker: 启用Hystrix自动配置
+ *
  */
 @EnableFeignClients
 @EnableDiscoveryClient
+@EnableCircuitBreaker
 @SpringBootApplication
 public class EurekaClientApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(EurekaClientApplication.class, args);
     }
@@ -33,22 +43,6 @@ public class EurekaClientApplication {
     Logger.Level feignLoggerLevel() {
         return Logger.Level.FULL;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

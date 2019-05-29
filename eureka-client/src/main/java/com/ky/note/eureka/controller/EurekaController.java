@@ -34,4 +34,5 @@ public class EurekaController {
         return userClient.user(userId);
     }
 
+
 }
