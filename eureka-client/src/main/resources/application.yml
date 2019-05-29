@@ -5,9 +5,29 @@ spring:
   application:
     name: eureka-client
 
+# Eureka注册中心配置
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     serviceUrl:
       defaultZone: http://127.0.0.1:5201/eureka/
+
+# Actuator监控配置
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #启用所有的监控端点，默认这些端点是禁用的
+
+
+
+
+
+# 日志配置
+logging:
+  level:
+    com:
+      ky:
+        note: debug
+
