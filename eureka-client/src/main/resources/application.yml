@@ -28,6 +28,15 @@ ribbon:
 # MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
 # OkToRetryOnAllOperations: false  #是否所有操作都重试
 
+# Feign配置
+feign:
+  hystrix:
+    enabled: true
+  compression: #支持对请求与响应进行GZIP压缩，以减少通信过程中的性能损耗
+    request:
+      enabled: true
+    response:
+      enabled: true
 
 # Hystrix配置
 hystrix:
@@ -41,7 +50,7 @@ hystrix:
 #            timeoutinMilliseconds: 2000 #默认2秒
 # threadpool:
 #   default:
-#     coreSize: 2 # 线程池大小
+#     coreSize: 2 # 内部服务之间调用的线程池大小
 
 # 日志配置
 logging:
