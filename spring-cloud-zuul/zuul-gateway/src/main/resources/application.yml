@@ -1,0 +1,25 @@
+server:
+  port: 5203
+
+spring:
+  application:
+    name: zuul-gateway # 服务名称
+
+# Eureka注册中心配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:5201/eureka/
+
+# Zuul网关配置
+zuul:
+  prefix: /api      # 增加前缀
+  strip-prefix: true # 请求服务前，是否删除前缀
+  routes:
+    eureka-client:
+      path: /eureka/**
+    user-service:
+      path: /user/**
+
