@@ -1,22 +1,22 @@
 package com.ky.note.eureka;
 
 
+import com.ky.note.eureka.properties.TestProperties;
 import feign.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 
 
 /**
- *
  * 0. @SpringCloudApplication:= @EnableCircuitBreaker + @EnableDiscoveryClient + @SpringBootApplication
  * 1. @EnableDiscoveryClient：使用@EnableEurekaClient或@EnableDiscoveryClient都可以;当注册中心非Eureka时必需使用@EnableDiscoveryClient;
  * 2. @EnableFeignClients: 启用Feign自动配置
  * 3. @EnableCircuitBreaker: 启用Hystrix自动配置
- *
  */
 @EnableFeignClients
 @EnableDiscoveryClient
@@ -28,6 +28,14 @@ public class EurekaClientApplication {
         SpringApplication.run(EurekaClientApplication.class, args);
     }
 
+    /**
+     * 注解@RefreshScope开启热更新，需要引入actuator包，调用127.0.0.1:5301/actuator/refresh接口即可
+     */
+    @Bean
+    @RefreshScope
+    TestProperties testProperties() {
+        return new TestProperties();
+    }
 
     /**
      * Feign提供了日志打印的功能，Feign的日志级别分为四种：

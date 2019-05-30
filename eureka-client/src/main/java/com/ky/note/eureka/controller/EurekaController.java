@@ -1,6 +1,7 @@
 package com.ky.note.eureka.controller;
 
 import com.ky.note.eureka.client.UserClient;
+import com.ky.note.eureka.properties.TestProperties;
 import com.ky.user.api.dto.UserInfoDTO;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.slf4j.Logger;
@@ -28,9 +29,13 @@ public class EurekaController {
     private Environment environment;
     @Autowired
     private UserClient userClient;
+    @Autowired
+    private TestProperties testProperties;
 
     @GetMapping("/info")
     public List<ServiceInstance> getEurekaInfo() {
+
+        log.info("读取配置：{}", testProperties.getNote());
         String name = environment.getProperty("spring.application.name");
         List<ServiceInstance> instances = discoveryClient.getInstances(name);
         log.info("{}:当前的执行的线程", Thread.currentThread().getName());

@@ -1,0 +1,23 @@
+server:
+  port: 5202
+
+spring:
+  application:
+    name: config-server # 服务名称
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/kamyam/config-repo #git仓库地址
+          search-paths: '{application}'
+
+# Eureka注册中心配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:5201/eureka/
+
+
+

@@ -1,50 +1,50 @@
-server:
-  port: 5301
+#erver:
+# port: 5301
 
-spring:
-  application:
-    name: eureka-client # 服务名称
+#pring:
+# application:
+#   name: eureka-client # 服务名称
 
 # Eureka注册中心配置
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true
-    serviceUrl:
-      defaultZone: http://127.0.0.1:5201/eureka/
+#ureka:
+# client:
+#   register-with-eureka: true
+#   fetch-registry: true
+#   serviceUrl:
+#     defaultZone: http://127.0.0.1:5201/eureka/
 
 # Actuator监控配置
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*" #启用所有的监控端点，默认这些端点是禁用的
+#anagement:
+# endpoints:
+#   web:
+#     exposure:
+#       include: "*" #启用所有的监控端点，默认这些端点是禁用的
 
 # Ribbon配置
-ribbon:
-  ReadTimeout: 10000    #响应超时时间
-  ConnectTimeout: 10000 #连接超时时间
+#ibbon:
+# ReadTimeout: 10000    #响应超时时间
+# ConnectTimeout: 10000 #连接超时时间
 # MaxAutoRetries: 1 #同一台实例最大重试次数,不包括首次调用
 # MaxAutoRetriesNextServer: 1 #重试负载均衡其他的实例最大重试次数,不包括首次调用
 # OkToRetryOnAllOperations: false  #是否所有操作都重试
 
 # Feign配置
-feign:
-  hystrix:
-    enabled: true
-  compression: #支持对请求与响应进行GZIP压缩，以减少通信过程中的性能损耗
-    request:
-      enabled: true
-    response:
-      enabled: true
+#eign:
+# hystrix:
+#   enabled: true
+# compression: #支持对请求与响应进行GZIP压缩，以减少通信过程中的性能损耗
+#   request:
+#     enabled: true
+#   response:
+#     enabled: true
 
 # Hystrix配置
-hystrix:
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false #关闭Hystrix超时时间
+#ystrix:
+# command:
+#   default:
+#     execution:
+#       timeout:
+#         enabled: false #关闭Hystrix超时时间
 #        isolation:
 #          thread:
 #            timeoutinMilliseconds: 2000 #默认2秒
@@ -53,9 +53,9 @@ hystrix:
 #     coreSize: 2 # 内部服务之间调用的线程池大小
 
 # 日志配置
-logging:
-  level:
-    com:
-      ky:
-        note: debug
+#ogging:
+# level:
+#   com:
+#     ky:
+#       note: debug
 
