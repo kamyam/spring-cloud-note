@@ -4,6 +4,7 @@ import com.ky.note.eureka.client.UserClient;
 import com.ky.note.eureka.properties.TestProperties;
 import com.ky.user.api.dto.UserInfoDTO;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-
+@ApiOperation("EurekaController")
 @RestController
 @RequestMapping("/eureka")
 public class EurekaController {

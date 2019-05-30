@@ -5,6 +5,7 @@ import com.ky.note.eureka.properties.TestProperties;
 import feign.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -18,6 +19,7 @@ import org.springframework.context.annotation.Bean;
  * 2. @EnableFeignClients: 启用Feign自动配置
  * 3. @EnableCircuitBreaker: 启用Hystrix自动配置
  */
+@EnableConfigurationProperties(TestProperties.class)
 @EnableFeignClients
 @EnableDiscoveryClient
 @EnableCircuitBreaker
@@ -31,11 +33,11 @@ public class EurekaClientApplication {
     /**
      * 注解@RefreshScope开启热更新，需要引入actuator包，调用127.0.0.1:5301/actuator/refresh接口即可
      */
-    @Bean
+   /* @Bean
     @RefreshScope
     TestProperties testProperties() {
         return new TestProperties();
-    }
+    }*/
 
     /**
      * Feign提供了日志打印的功能，Feign的日志级别分为四种：
