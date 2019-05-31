@@ -1,0 +1,19 @@
+server:
+  port: 5203
+  servlet:
+    context-path: /admin-server
+spring:
+  application:
+    name: admin-server # 服务名称
+
+
+# Eureka注册中心配置
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://127.0.0.1:5201/eureka/
+
+
+
