@@ -13,6 +13,16 @@ spring:
       discovery:
         serviceId: config-server
         enabled: true
+#    zookeeper: # 接入ZK注册中心配置
+#      connect-string: 127.0.0.1:2181
+
+#    consul: # 接入consul注册中心配置
+#      host: 172.17.141.249
+#      port: 8500
+#      discovery:
+#        service-name: ${spring.application.name}
+#        hostname: 172.17.141.241
+#
 
 # Eureka注册中心配置
 eureka:

@@ -66,10 +66,18 @@
         </dependency>
 
 
+        <!--zk注册中心客户端依赖-->
+        <!--<dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zookeeper-discovery</artifactId>
+        </dependency>-->
 
+        <!--consul注册中心客户端依赖-->
+        <!--<dependency>
+             <groupId>org.springframework.cloud</groupId>
+             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+         </dependency>-->
     </dependencies>
-
-
 
 
     <build>
