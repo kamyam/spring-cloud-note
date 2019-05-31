@@ -3,11 +3,11 @@ server:
 
 spring:
   application:
-    name: eureka-Server
+    name: eureka-server
 
 eureka:
   instance:
-    hostname: 127.0.0.1 #指定了Eureka服务端的IP
+#   hostname: 127.0.0.1 #指定了Eureka服务端的IP
   client:
     register-with-eureka: false #是否将服务注册到Eureka服务端，单机：false，集群true
     fetch-registry: false #是否从Eureka服务端获取服务信息，单机：false，集群true
