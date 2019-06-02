@@ -1,0 +1,21 @@
+server:
+ port: 5301
+
+spring:
+ application:
+   name: apollo-client # 服务名称
+
+# Eureka注册中心配置
+eureka:
+ client:
+   register-with-eureka: true
+   fetch-registry: true
+   serviceUrl:
+    defaultZone: http://172.17.201.203:5201/eureka/
+
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: test.yml
+
+

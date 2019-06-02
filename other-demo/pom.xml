@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -10,24 +11,17 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.ky.note</groupId>
-    <artifactId>spring-cloud-note</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>other-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
     <modules>
-        <module>user-service</module>
-        <module>spring-cloud-config</module>
-        <module>spring-cloud-eureka</module>
-        <module>spring-cloud-zuul</module>
-        <module>spring-boot-admin</module>
-        <module>other-demo</module>
+        <module>apollo-client</module>
     </modules>
-
-
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
     </properties>
-
 
 
     <dependencyManagement>
