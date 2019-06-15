@@ -20,6 +20,7 @@
         <module>spring-cloud-zuul</module>
         <module>spring-boot-admin</module>
         <module>other-demo</module>
+        <module>spring-cloud-oauth2</module>
     </modules>
 
 
