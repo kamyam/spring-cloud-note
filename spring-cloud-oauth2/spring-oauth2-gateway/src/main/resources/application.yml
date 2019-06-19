@@ -1,17 +1,6 @@
 server:
   port: 5402
 
-security:
-  oauth2:
-    resource:
-      #从认证授权中心上验证token
-      tokenInfoUri: http://localhost:5401/oauth/check_token
-      preferTokenInfo: true
-    client:
-      ###appid
-      clientId: first-client
-      ###appSecret
-      clientSecret: noonewilleverguess
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
